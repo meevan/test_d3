@@ -34,6 +34,30 @@ svg text .title{
 <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
 <script>
 
+  
+//connected with SAS VA data-driven-content
+"use strict";
+
+    if (window.addEventListener) {
+        // For standards-compliant web browsers
+        window.addEventListener("message", onMessage, false);
+    }
+    else {
+        window.attachEvent("onmessage", onMessage);
+    }  
+  
+      function onMessage (evt) {
+      if (evt && evt.data && evt.data.hasOwnProperty("data")){
+        if(evt.data.data.length == 0){
+          updateData(raw_data);
+        }else{
+          d3.select("svg").selectAll("*").remove();
+          document.getElementById("hint").innerHTML="";
+          updateData(evt.data);
+        }
+      }
+    }
+  
 //load survival data in.
 d3.csv("data.csv", function(raw_data){
 
