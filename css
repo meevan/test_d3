@@ -1,0 +1,30 @@
+svg {
+  display: block;
+  font-size: 11px;
+  margin: auto;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke: #333;
+}
+
+text {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  fill: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  text-transform: uppercase; 
+  user-select: none;
+}
+
+text::selection {
+  background: none;
+}
+
+.legend__item {
+  cursor: pointer;
+}
